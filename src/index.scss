@@ -1,0 +1,56 @@
+body {
+  --bg-image: url(./images/quito.jpg);
+  --bg-opacity: 0.3;
+  color: #1a1a1a;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body::after {
+  content: '';
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: fixed;
+  opacity: var(--bg-opacity);
+  z-index: -1;
+  inset: 0;
+}
+
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    color: #1a1a1a;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
