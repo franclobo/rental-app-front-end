@@ -2,8 +2,9 @@ import React from 'react'
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
 import logo from '../images/logo.png';
+import '../styles/signin.scss';
 
-function Sign() {
+function Signin() {
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
@@ -70,4 +71,4 @@ function Sign() {
   );
 }
 
-export default Sign;
+export default Signin;
