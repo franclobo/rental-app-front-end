@@ -12,7 +12,7 @@ body::after {
 
 .navbarContainer {
   height: 100vh;
-  width: 50vw;
+  width: 25vw;
 }
 
 .navbarContainer::after {
@@ -26,47 +26,37 @@ body::after {
   inset: 0;
 }
 
-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin: 10px;
-  ul {
-    margin: 0;
-    padding: 0;
-
-    li {
-      list-style: none;
-      a {
-      text-decoration: none;
-      }
-    }
-  }
+.hamburger {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin: 0 20px 1000px 0;
 }
 
 @media screen and (min-width: 768px) {
   .navbarContainer {
     height: 100vh;
-    width: 50vw;
+    width: 15vw;
+    margin: 10px;
+    padding: 10px;
   }
 
   .navbarContainer::after {
     content: '';
     background-color: #eb9525;
     height: 100vh;
-    width: 20vw;
+    width: 15vw;
     opacity: 0.3;
     position: fixed;
     z-index: -1;
     inset: 0;
   }
   .navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 10px;
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
     .nav-links {
       display: flex;
       flex-direction: column;
@@ -74,10 +64,16 @@ nav {
       align-items: center;
       margin: 0;
       padding: 0;
+      width: 10vw;
       li {
         list-style: none;
+        margin-bottom: 20px;
         a {
           text-decoration: none;
+          color: #1a1a1a;
+        }
+        a:hover {
+          color: #504f4f;
         }
       }
     }
@@ -93,6 +89,7 @@ nav {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 10px;
+    margin: 10px 40px;
   }
   .item {
     position: relative;

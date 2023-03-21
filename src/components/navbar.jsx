@@ -2,11 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Logo from './logo';
 import Filter from './filter';
+import '../styles/index.scss'
 
 
 function ResponsiveAppBar() {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [navVisible, setNavVisible] = useState(false);
+
+  const toggleNavVisibility = () => {
+    setNavVisible(!navVisible);
+  };
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -17,12 +23,14 @@ function ResponsiveAppBar() {
   const isMobile = windowWidth <= 720;
 
 
-
   return (
+    <>
+      <GiHamburgerMenu className="hamburger" onClick={toggleNavVisibility} />
+      {navVisible &&
     <div className="navbarContainer">
       <nav className="navbar">
-        {isMobile && <GiHamburgerMenu />}
-        <Logo />
+        { isMobile }
+        <Logo className="logo"/>
         <ul className="nav-links">
           <li>
             <a href="/" className="nav-link">
@@ -43,6 +51,8 @@ function ResponsiveAppBar() {
         <Filter />
       </nav>
     </div>
+}
+    </>
   );
 }
 export default ResponsiveAppBar;
